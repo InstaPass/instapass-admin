@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.light.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "instapass-admin"
+    }
+  },
+  "defaultProject": "instapass-admin",
+  "cli": {
+    "analytics": "932c2e5d-ad50-4a9c-9cfc-9fc6fd857877"
+  }
 }
