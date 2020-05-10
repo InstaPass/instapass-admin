@@ -1,0 +1,27 @@
+<form action="your-action" (submit)="onFormSubmit($event)">
+    <dx-form id="form"
+        [formData]="customer"
+        [readOnly]="false"
+        [showColonAfterLabel]="true"
+        [showValidationSummary]="true"
+        validationGroup="customerData">
+        <dxi-item itemType="group" caption="进出策略">
+            <dxi-item dataField="每户每天进出次数" 
+                [editorOptions]="{
+                    maskRules: phoneRules
+                }">
+                <dxi-validation-rule 
+                    type="pattern"
+                    [pattern]="phonePattern">
+                </dxi-validation-rule>
+            </dxi-item>
+            
+        </dxi-item>
+
+        <dxi-item 
+            itemType="button"
+            horizontalAlignment="left"
+            [buttonOptions]="buttonOptions">
+        </dxi-item>
+    </dx-form>
+</form>

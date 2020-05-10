@@ -8,6 +8,7 @@ export class Message {
     Time: string;
     Temperature: number;
     LeftNum: number;
+    Remark: string;
 }
 
 let messages: Message[] = [
@@ -18,7 +19,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 2,
@@ -27,7 +29,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 3,
@@ -36,7 +39,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 4,
@@ -45,7 +49,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 5,
@@ -54,7 +59,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 6,
@@ -63,7 +69,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 7,
@@ -72,7 +79,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 8,
@@ -81,7 +89,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 9,
@@ -90,7 +99,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 10,
@@ -99,7 +109,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 11,
@@ -108,7 +119,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 12,
@@ -117,7 +129,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 13,
@@ -126,7 +139,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 14,
@@ -135,7 +149,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 15,
@@ -144,7 +159,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 16,
@@ -153,7 +169,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 17,
@@ -162,7 +179,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 18,
@@ -171,7 +189,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 19,
@@ -180,7 +199,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 20,
@@ -189,7 +209,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 21,
@@ -198,7 +219,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 22,
@@ -207,7 +229,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 23,
@@ -216,7 +239,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     },
     {
         "InfoID": 24,
@@ -225,7 +249,8 @@ let messages: Message[] = [
         "Gate": "Gate M",
         "Time": "2020/4/20",
         "Temperature": 36.6,
-        "LeftNum": 0
+        "LeftNum": 0,
+        "Remark": "购买药品"
     }
 ];
 

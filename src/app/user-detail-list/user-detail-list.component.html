@@ -1,10 +1,16 @@
 <dx-data-grid
     id="gridContainer"
-    class="messageGrid"
-    [dataSource]="messages"
-    keyExpr="InfoID"
+    [dataSource]="employees"
+    keyExpr="ID"
     [showBorders]="true"
     [focusedRowEnabled]="true">
+
+    <dxo-editing
+        [allowUpdating]="true"
+        [allowDeleting]="true"
+        [selectTextOnEditStart]="true"
+        [useIcons]="true">
+    </dxo-editing>
 
     <dxo-header-filter [visible]="true">
     </dxo-header-filter>
@@ -24,23 +30,29 @@
         [showNavigationButtons]="true">
     </dxo-pager>
 
-    <dxi-column dataField="Dweller">
+    <dxi-column dataField="FirstName">
     </dxi-column>
 
-    <dxi-column dataField="Guard">
+    <dxi-column dataField="LastName">
     </dxi-column>
 
-    <dxi-column dataField="Gate">
+    <dxi-column dataField="Phone">
     </dxi-column>
 
-    <dxi-column dataField="Time"
+    <dxi-column dataField="BirthDate"
         dataType="date">
     </dxi-column>
 
-    <dxi-column dataField="Temperature">
+    <dxi-column dataField="Address">
     </dxi-column>
 
-    <dxi-column dataField="Remark">
+    <dxi-column dataField="StateID"
+        caption="State">
+        <dxo-lookup
+            [dataSource]="states"
+            valueExpr="ID"
+            displayExpr="Name">
+        </dxo-lookup>
     </dxi-column>
+
 </dx-data-grid>
-
