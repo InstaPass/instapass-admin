@@ -13,6 +13,8 @@ import { DxDataGridModule,
   DxFormComponent
 } from 'devextreme-angular';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +25,7 @@ import { DrawerMenuComponent } from './drawer-menu/drawer-menu.component';
 import { UserDetailListComponent } from './user-detail-list/user-detail-list.component';
 import { AnnoListComponent } from './anno-list/anno-list.component';
 import { IoStrategyComponent } from './io-strategy/io-strategy.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { LoginComponent } from './login/login.component';
     DxToolbarModule,
     DxHtmlEditorModule,
     DxButtonModule,
-    DxFormModule
+    DxFormModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
