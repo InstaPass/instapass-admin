@@ -23,22 +23,22 @@ export class DrawerMenuComponent implements OnInit {
     console.log(e.itemData.id);
     switch (e.itemData.id) {
       case 1:
-        this.router.navigateByUrl("iorecord");
+        this.router.navigateByUrl("/t/iorecord");
         break;
       case 2:
-        this.router.navigateByUrl("userdetail");
+        this.router.navigateByUrl("/t/userdetail");
         break;
       case 3:
-        this.router.navigateByUrl("anno");
+        this.router.navigateByUrl("/t/anno");
         break;
       case 4:
-        this.router.navigateByUrl("");
+        this.router.navigateByUrl("/t/strategy");
         break;
       case 5:
-        this.router.navigateByUrl("strategy");
+        this.router.navigateByUrl("/login");
         break;
       default:
-        this.router.navigateByUrl("");
+        this.router.navigateByUrl("/t/iorecord");
         break;
     }
   }
