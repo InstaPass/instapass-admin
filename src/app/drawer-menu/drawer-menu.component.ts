@@ -3,6 +3,8 @@ import { List, Service } from './drawer-menu-data.service';
 import { DxDrawerComponent } from 'devextreme-angular';
 import { Router } from '@angular/router';
 
+import { ApiService } from '../service/api.service';
+
 @Component({
   selector: 'app-drawer-menu',
   templateUrl: './drawer-menu.component.html',
@@ -15,9 +17,7 @@ export class DrawerMenuComponent implements OnInit {
   isDrawerOpen: Boolean = true;
   elementAttr: any;
 
-  constructor(private router: Router, service: Service) {
-      this.navigation = service.getNavigationList();
-  }
+  constructor(private router: Router, private service: Service, private apiService: ApiService) { }
 
   changeOption(e) {
     console.log(e.itemData.id);
@@ -35,6 +35,9 @@ export class DrawerMenuComponent implements OnInit {
         this.router.navigateByUrl("/t/strategy");
         break;
       case 5:
+        debugger;
+        this.apiService.logout();
+        window.localStorage.removeItem('token');
         this.router.navigateByUrl("/login");
         break;
       default:
@@ -53,6 +56,7 @@ export class DrawerMenuComponent implements OnInit {
   }];
 
   ngOnInit(): void {
+    this.navigation = this.service.getNavigationList();
   }
 
 }

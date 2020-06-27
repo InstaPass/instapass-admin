@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {TokenInterceptor} from "./core/interceptor";
+import {ApiService} from "./service/api.service"; 
+
 import { DxDataGridModule,
   DxDrawerComponent, 
   DxDrawerModule, 
@@ -43,6 +47,7 @@ import { LoginComponent } from './login/login.component'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     DxDataGridModule,
     DxDrawerModule,
     DxListModule,
@@ -53,7 +58,9 @@ import { LoginComponent } from './login/login.component'
     DxFormModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [ApiService, {provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi : true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

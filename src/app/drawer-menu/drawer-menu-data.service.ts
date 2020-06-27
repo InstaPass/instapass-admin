@@ -21,7 +21,7 @@ let navigation: List[] = [
 ];
 
 export class Service {
-    getNavigationList(): List[] {
+    getNavigationList() : List[] {
         return navigation;
     }
 }
