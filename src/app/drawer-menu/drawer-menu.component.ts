@@ -35,7 +35,6 @@ export class DrawerMenuComponent implements OnInit {
         this.router.navigateByUrl("/t/strategy");
         break;
       case 5:
-        debugger;
         this.apiService.logout();
         window.localStorage.removeItem('token');
         this.router.navigateByUrl("/login");

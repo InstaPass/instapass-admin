@@ -20,10 +20,16 @@ export class ApiService {
     }
 
     logout() : Observable<ApiResponse> {
-        debugger;
-        const logoutPayload = {};
-        const httpOptions = {};
-        return this.http.post<ApiResponse>(this.baseUrl + '/admin/logout', logoutPayload, httpOptions);
+        return ;
+    }
+
+    postNotification(content) : Observable<ApiResponse> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+        return this.http.post<ApiResponse>(this.baseUrl + '/admin/notify/release', content, httpOptions);
     }
 
     getNotifications() : Observable<ApiResponse> {

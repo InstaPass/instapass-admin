@@ -28,19 +28,14 @@ export class LoginComponent implements OnInit {
     }
     this.apiService.login(loginPayload).subscribe(data => {
       debugger;
-      
-      window.localStorage.setItem('token', data.jwt_token);
-      this.router.navigateByUrl("t");
-
-      // TODO: check status
-      // if (data.status === 'ok') {
-      //   window.localStorage.setItem('token', data.jwt_token);
-      //   this.router.navigateByUrl("t");
-      // }else{
-      //   this.invalidLogin = true;
-      //   alert(data.msg);
-      // }
-
+      if (data.status === 'ok') {
+        window.localStorage.setItem('token', data.jwt_token);
+        window.localStorage.setItem('working_communities', JSON.stringify(data.working_communities));
+        this.router.navigateByUrl("t");
+      }else{
+        this.invalidLogin = true;
+        alert(data.msg);
+      }
     });
   }
 

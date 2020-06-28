@@ -7,4 +7,6 @@ export class ApiResponse {
     last_retrieve_time: number;
     notifications: any;
     residents_info: any;
+
+    working_communities: any;
 }
