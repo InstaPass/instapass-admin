@@ -1,8 +1,18 @@
-<dx-data-grid
+<h2>选择小区</h2>
+
+<dx-select-box class="select-box"
+    [items]="communities"
+    valueExpr="community_id"
+    displayExpr="community"
+    [(value)]="community_post_id"
+    placeholder="发布到哪个小区"
+    (onItemClick)="onSelectCommunityChanged()">
+</dx-select-box>
+
+<dx-data-grid class="data-box"
     id="gridContainer"
-    class="messageGrid"
     [dataSource]="messages"
-    keyExpr="InfoID"
+    keyExpr="身份证号"
     [showBorders]="true"
     [focusedRowEnabled]="true">
 
@@ -15,7 +25,7 @@
     <dxo-filter-row [visible]="true">
     </dxo-filter-row>
 
-    <dxo-paging [pageSize]="10">
+    <dxo-paging [pageSize]="20">
     </dxo-paging>
 
     <dxo-pager
@@ -24,23 +34,26 @@
         [showNavigationButtons]="true">
     </dxo-pager>
 
-    <dxi-column dataField="Dweller">
+    <dxi-column dataField="身份证号">
     </dxi-column>
 
-    <dxi-column dataField="Guard">
+    <dxi-column dataField="姓名">
     </dxi-column>
 
-    <dxi-column dataField="Gate">
+    <dxi-column dataField="状态">
     </dxi-column>
 
-    <dxi-column dataField="Time"
+    <dxi-column dataField="地址">
+    </dxi-column>
+
+    <dxi-column dataField="时间"
         dataType="date">
     </dxi-column>
 
-    <dxi-column dataField="Temperature">
+    <dxi-column dataField="小区">
     </dxi-column>
 
-    <dxi-column dataField="Remark">
+    <dxi-column dataField="原因">
     </dxi-column>
 </dx-data-grid>
 

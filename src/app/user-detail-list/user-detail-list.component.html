@@ -1,16 +1,28 @@
-<dx-data-grid
+
+<h2>选择小区</h2>
+
+<dx-select-box class="select-box"
+    [items]="communities"
+    valueExpr="community_id"
+    displayExpr="community"
+    [(value)]="community_post_id"
+    placeholder="发布到哪个小区"
+    (onItemClick)="onSelectCommunityChanged()">
+</dx-select-box>
+
+<dx-data-grid class="data-box"
     id="gridContainer"
-    [dataSource]="employees"
-    keyExpr="ID"
+    [dataSource]="users"
+    keyExpr="身份证号"
     [showBorders]="true"
     [focusedRowEnabled]="true">
 
-    <dxo-editing
-        [allowUpdating]="true"
-        [allowDeleting]="true"
-        [selectTextOnEditStart]="true"
-        [useIcons]="true">
-    </dxo-editing>
+    <!-- <dxo-editing -->
+        <!-- [allowUpdating]="true" -->
+        <!-- [allowDeleting]="true" -->
+        <!-- [selectTextOnEditStart]="true" -->
+        <!-- [useIcons]="true"> -->
+    <!-- </dxo-editing> -->
 
     <dxo-header-filter [visible]="true">
     </dxo-header-filter>
@@ -21,7 +33,7 @@
     <dxo-filter-row [visible]="true">
     </dxo-filter-row>
 
-    <dxo-paging [pageSize]="10">
+    <dxo-paging [pageSize]="20">
     </dxo-paging>
 
     <dxo-pager
@@ -30,10 +42,16 @@
         [showNavigationButtons]="true">
     </dxo-pager>
 
-    <dxi-column dataField="FirstName">
+    <dxi-column dataField="身份证号">
     </dxi-column>
 
-    <dxi-column dataField="LastName">
+    <dxi-column dataField="姓名">
+    </dxi-column>
+
+    <dxi-column dataField="状态">
+    </dxi-column>
+
+    <!-- <dxi-column dataField="LastName">
     </dxi-column>
 
     <dxi-column dataField="Phone">
@@ -53,6 +71,6 @@
             valueExpr="ID"
             displayExpr="Name">
         </dxo-lookup>
-    </dxi-column>
+    </dxi-column> -->
 
 </dx-data-grid>

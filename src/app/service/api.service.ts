@@ -35,4 +35,21 @@ export class ApiService {
     getNotifications() : Observable<ApiResponse> {
         return this.http.get<ApiResponse>(this.baseUrl + '/admin/notifications?all=1');
     }
+
+    getUserInfo(community_id) : Observable<ApiResponse> {
+        return this.http.get<ApiResponse>(this.baseUrl + '/admin/infos/' + community_id.toString());
+    }
+
+    getUserHistory(community_id) : Observable<ApiResponse> {
+        return this.http.get<ApiResponse>(this.baseUrl + '/admin/history/' + community_id.toString());
+    }
+
+    postStrategy(strategy) : Observable<ApiResponse> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+        return this.http.post<ApiResponse>(this.baseUrl + '/admin/strategy/change', strategy, httpOptions);
+    }
 }

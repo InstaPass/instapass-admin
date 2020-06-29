@@ -14,7 +14,9 @@ import { DxDataGridModule,
   DxHtmlEditorModule,
   DxButtonModule,
   DxFormModule,
-  DxFormComponent
+  DxFormComponent,
+  DxTextAreaModule,
+  DxSelectBoxModule
 } from 'devextreme-angular';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -56,6 +58,8 @@ import { LoginComponent } from './login/login.component'
     DxHtmlEditorModule,
     DxButtonModule,
     DxFormModule,
+    DxTextAreaModule,
+    DxSelectBoxModule,
     FontAwesomeModule
   ],
   providers: [ApiService, {provide: HTTP_INTERCEPTORS,

@@ -13,30 +13,28 @@ import { not } from '@angular/compiler/src/output/output_ast';
 export class AnnoListComponent implements OnInit {
 
   notifications: Notification[];
+  indexArray: number[];
   valueContent: string;
+  community_post_id: number;
+  community_post: any;
+  communities: any;
+  community_post_unselected: boolean;
 
   constructor(private service: Service,  private apiService: ApiService) { 
       this.notifications = service.getNotifications();
+      this.community_post_unselected = true;
   }
 
-  valueChange(value) {
-    this.valueContent = value;
-    console.log(this.valueContent);
-  }
-
-  click(e) {
-    let adminStatus = JSON.parse(window.localStorage.getItem('working_communities'));
+  click() {
     let annoPayload = {
       notification: {
-        community_id: adminStatus[0].community_id,
-        community: adminStatus[0].community,
-        address: adminStatus[0].address,
+        community_id: this.community_post_id,
+        community: this.community_post.community,
+        address: this.community_post.address,
         author: "登录信息里没有这一项",
         content: this.valueContent
       }
     }
-    console.log(adminStatus);
-    console.log(annoPayload);
 
     this.apiService.postNotification(annoPayload).subscribe(data => {
       if (data.status === "ok") {
@@ -48,16 +46,33 @@ export class AnnoListComponent implements OnInit {
     });
   }
 
+  onSelectCommunityChanged() {
+    console.log("aaa");
+    let adminStatus = JSON.parse(window.localStorage.getItem('working_communities'));
+    if (this.community_post_unselected == true) {
+      
+      this.community_post_unselected = false;
+  
+    }
+    adminStatus.forEach(element => {
+      if (element.community_id == this.community_post_id) {
+        this.community_post = element;
+        console.log(this.community_post);
+      }
+    });
+  }
+
   getNotify(): void {
+    this.notifications = [];
     let annos = [];
     this.apiService.getNotifications().subscribe(data => {
+      console.log(data);
       if (data.status === "ok") {
         annos = data.notifications;
         annos.forEach(element => {
-          debugger;
           let notification = new Notification();
           let dateString = new Date(element.release_time).toUTCString();
-          notification.key = dateString + ' ' + element.release_time.toString();
+          notification.key = dateString;
           notification.items = [];
           notification.items.push(element.author);
           notification.items.push(element.address);
@@ -68,10 +83,14 @@ export class AnnoListComponent implements OnInit {
       }else{
         alert("拉取公告失败。\n错误原因：" + data.msg);
       }
+
+      this.indexArray = Array.from({length: this.notifications.length}, (v,k) => k);
+      console.log(this.indexArray);
     });
   }
 
   ngOnInit(): void {
     this.getNotify();
+    this.communities = JSON.parse(window.localStorage.getItem('working_communities'));
   }
 }

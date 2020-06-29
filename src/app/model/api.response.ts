@@ -9,4 +9,6 @@ export class ApiResponse {
     residents_info: any;
 
     working_communities: any;
+
+    residents: any;
 }
