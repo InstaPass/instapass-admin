@@ -11,11 +11,17 @@
 
     <br>
     <dx-text-area class="textbox"
+        [height]="35"
+        [(value)]="author"
+        placeholder="请在此输入发布人姓名或发布组织名称">
+    </dx-text-area>
+    <dx-text-area class="textbox"
         [height]="300"
         [(value)]="valueContent">
     </dx-text-area>
 
     <br>
+
 
     <dx-button class="button"
         stylingMode="contained"

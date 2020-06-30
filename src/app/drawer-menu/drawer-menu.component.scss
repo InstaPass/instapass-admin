@@ -60,3 +60,19 @@
     font-weight: bold;
 }
 
+
+
+ 
+
+
+
+
+::ng-deep .panel-list .dx-list-item {
+    color: #fff;
+    border-top: 1px solid rgba(221, 221, 221, .2);
+}
+
+::ng-deep .panel-list .dx-list-item .dx-icon {
+    color: #fff !important;
+}
+

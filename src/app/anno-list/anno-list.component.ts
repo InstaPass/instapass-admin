@@ -15,6 +15,7 @@ export class AnnoListComponent implements OnInit {
   notifications: Notification[];
   indexArray: number[];
   valueContent: string;
+  author: string;
   community_post_id: number;
   community_post: any;
   communities: any;
@@ -31,7 +32,7 @@ export class AnnoListComponent implements OnInit {
         community_id: this.community_post_id,
         community: this.community_post.community,
         address: this.community_post.address,
-        author: "登录信息里没有这一项",
+        author: this.author,
         content: this.valueContent
       }
     }
@@ -70,8 +71,10 @@ export class AnnoListComponent implements OnInit {
       if (data.status === "ok") {
         annos = data.notifications;
         annos.forEach(element => {
+          debugger;
           let notification = new Notification();
-          let dateString = new Date(element.release_time).toUTCString();
+          let date = new Date(element.release_time * 1000);
+          let dateString = date.toLocaleDateString().replace(/\//g, "-") + " " + date.toTimeString().substr(0, 8);
           notification.key = dateString;
           notification.items = [];
           notification.items.push(element.author);
