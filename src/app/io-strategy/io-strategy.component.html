@@ -1,23 +1,36 @@
-<form action="your-action" (submit)="onFormSubmit($event)">
+<h2>选择小区</h2>
+
+<dx-select-box class="select-box"
+    [items]="communities"
+    valueExpr="community_id"
+    displayExpr="community"
+    [(value)]="community_post_id"
+    placeholder="选择哪个小区"
+    (onItemClick)="onSelectCommunityChanged()">
+</dx-select-box>
+
+<form >
+    <dx-form class="show-stragegy-box"
+    [(formData)]="strategy"
+    readOnly="true">
+
+        <dxi-item itemType="group" caption="当前进出策略">
+            <dxi-item dataField="最小出入间隔" editorType="dxNumberBox">
+            </dxi-item>
+        </dxi-item>
+    </dx-form>
+</form>
+
+<form (submit)="onFormSubmit()">
     <dx-form id="form"
-        [formData]="customer"
+        [formData]="new_strategy"
         [readOnly]="false"
-        [showColonAfterLabel]="true"
         [showValidationSummary]="true"
         validationGroup="customerData">
-        <dxi-item itemType="group" caption="进出策略">
-            <dxi-item dataField="每户每天进出次数" 
-                [editorOptions]="{
-                    maskRules: phoneRules
-                }">
-                <dxi-validation-rule 
-                    type="pattern"
-                    [pattern]="phonePattern">
-                </dxi-validation-rule>
+        <dxi-item itemType="group" caption="修改进出策略">
+            <dxi-item dataField="最小出入间隔" editorType="dxNumberBox">
             </dxi-item>
-            
         </dxi-item>
-
         <dxi-item 
             itemType="button"
             horizontalAlignment="left"

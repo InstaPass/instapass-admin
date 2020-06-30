@@ -44,12 +44,16 @@ export class ApiService {
         return this.http.get<ApiResponse>(this.baseUrl + '/admin/history/' + community_id.toString());
     }
 
+    getStrategy() : Observable<ApiResponse> {
+        return this.http.get<ApiResponse>(this.baseUrl + '/admin/strategy');
+    }
+
     postStrategy(strategy) : Observable<ApiResponse> {
         const httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json'
             })
         };
-        return this.http.post<ApiResponse>(this.baseUrl + '/admin/strategy/change', strategy, httpOptions);
+        return this.http.post<ApiResponse>(this.baseUrl + '/admin/strategy', strategy, httpOptions);
     }
 }

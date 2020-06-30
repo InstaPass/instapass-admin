@@ -11,4 +11,6 @@ export class ApiResponse {
     working_communities: any;
 
     residents: any;
+
+    strategies: any;
 }
